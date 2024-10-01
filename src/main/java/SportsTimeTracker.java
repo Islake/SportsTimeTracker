@@ -3,20 +3,35 @@ import java.util.List;
 import java.util.Scanner;
 
 public class SportsTimeTracker {
-    private static class Activity {
-        String name;
-        int duration; // in minutes
+    public static class Activity {
+        private String name;
+        private int duration; // in minutes
 
         Activity(String name, int duration) {
             this.name = name;
             this.duration = duration;
         }
+
+        public String getName() {
+            return name;
+        }
+
+        public int getDuration() {
+            return duration;
+        }
     }
+
+    // Rest of the SportsTimeTracker class remains the same
+
 
     private List<Activity> activities = new ArrayList<>();
 
     public void logActivity(String name, int duration) {
         activities.add(new Activity(name, duration));
+    }
+
+    public List<Activity> getActivities() {
+        return activities;
     }
 
     public void viewActivities() {
